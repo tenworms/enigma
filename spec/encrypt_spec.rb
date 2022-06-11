@@ -18,9 +18,12 @@ RSpec.describe Encrypt do
   end
 
   it "has a encryption" do
-  expect(@encrypt.encryption).to eq("hello world")
+    expect(@encrypt.encryption).to eq("hello world")
 
-end
+  end
 
+  it "has a key" do
+    expect(@encrypt.key).to eq("02715")
+  end
 
 end
