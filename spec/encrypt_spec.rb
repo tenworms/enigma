@@ -17,5 +17,10 @@ RSpec.describe Encrypt do
 
   end
 
+  it "has a encryption" do
+  expect(@encrypt.encryption).to eq("hello world")
+
+end
+
 
 end
