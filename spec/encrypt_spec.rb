@@ -1,6 +1,5 @@
 require 'date'
 require './lib/encrypt'
-require './lib/enigma'
 
 RSpec.describe Encrypt do
   before :each do

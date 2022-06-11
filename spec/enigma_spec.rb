@@ -1,5 +1,6 @@
 require 'date'
 require './lib/enigma'
+require './lib/encrypt'
 
 RSpec.describe Enigma do
 
