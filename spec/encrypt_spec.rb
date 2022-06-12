@@ -27,6 +27,15 @@ RSpec.describe Encrypt do
 
   it "has a date" do
     expect(@encrypt.date).to eq("040895")
+  end
+
+  it 'can create a random key' do
+    expect(@encrypt.random_key.length).to eq(5)
+  end
+
+  it "can create the A, B, C, D keys" do
+    require "pry"; binding.pry
+    expect(@encrypt.keys["B"].values.length).to eq(2)
 
   end
 
