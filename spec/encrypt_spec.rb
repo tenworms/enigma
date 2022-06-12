@@ -43,5 +43,10 @@ RSpec.describe Encrypt do
 
   end
 
+  it "has the final shifts" do
+    expect(@encrypt.shift_key[:A]).to be_a Integer
+
+  end
+
 
 end

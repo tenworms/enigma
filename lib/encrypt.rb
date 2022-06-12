@@ -37,7 +37,6 @@ class Encrypt
               :C => (@c_key + @c_offset),
               :D => (@d_key + @d_offset)
               }
-              require "pry"; binding.pry
   end
 
 
