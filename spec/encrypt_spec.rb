@@ -38,5 +38,10 @@ RSpec.describe Encrypt do
 
   end
 
+  it "can create the date offset" do
+    expect(@encrypt.date_offset).to be_a Integer
+
+  end
+
 
 end
