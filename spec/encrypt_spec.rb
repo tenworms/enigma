@@ -34,8 +34,9 @@ RSpec.describe Encrypt do
   end
 
   it "can create the A, B, C, D keys" do
-    expect(@encrypt.shift_key).to eq(2)
+    expect(@encrypt.alphabet_keys).to be_a Integer
 
   end
+
 
 end
