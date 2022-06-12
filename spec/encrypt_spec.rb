@@ -25,7 +25,7 @@ RSpec.describe Encrypt do
     expect(@encrypt.key).to eq("02715")
   end
 
-  it "has a date" do
+  xit "has a date" do
     expect(@encrypt.date).to eq("040895")
   end
 
@@ -34,8 +34,7 @@ RSpec.describe Encrypt do
   end
 
   it "can create the A, B, C, D keys" do
-    require "pry"; binding.pry
-    expect(@encrypt.keys["B"].values.length).to eq(2)
+    expect(@encrypt.shift_key).to eq(2)
 
   end
 
