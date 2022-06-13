@@ -24,6 +24,10 @@ RSpec.describe Decrypt do
 
   it "can create the A, B, C, D key" do
     expect(@decrypt.alphabet_keys).to be_a Integer
+  end
+
+  it "can create the date offset" do
+    expect(@decrypt.date_offset).to be_a Integer
 
   end
 
