@@ -75,7 +75,7 @@ class Encrypt
          char = d_final[char]
        end
      end
-     {:encrypted => encrypted.join, :key => @key, :date => @date}
+     {:encryption => encrypted.join, :key => @key, :date => @date}
    end
 
 

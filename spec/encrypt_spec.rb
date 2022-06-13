@@ -49,7 +49,7 @@ RSpec.describe Encrypt do
   end
 
   it "works" do
-    expect(@encrypt.new_message).to eq({:encrypted => "keder ohulw" , :key => "02715" , :date => "040895"})
+    expect(@encrypt.new_message).to eq({:encryption => "keder ohulw" , :key => "02715" , :date => "040895"})
 
   end
 
