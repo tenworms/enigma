@@ -8,7 +8,11 @@ RSpec.describe Decrypt do
 
   it "exists" do
     expect(@decrypt).to be_a Decrypt
-    
+  end
+
+  it "has a coded message" do
+    expect(@decrypt.message).to eq("keder ohulw")
+
   end
 
 end
