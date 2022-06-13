@@ -16,7 +16,10 @@ RSpec.describe Decrypt do
 
   it "has a key" do
     expect(@decrypt.key).to eq("02715")
+  end
 
+  it "has a date" do
+    expect(@decrypt.date).to eq("040895")
   end
 
 end
