@@ -12,34 +12,38 @@ RSpec.describe Encrypt do
 
   end
 
-  xit "has a encryption" do
+  it "has an encryption" do
     expect(@encrypt.encryption).to eq("hello world")
 
   end
 
-  xit "has a key" do
+  it "has a key" do
     expect(@encrypt.key).to eq("02715")
   end
 
-  xit "has a date" do
+  it "has a date" do
     expect(@encrypt.date).to eq("040895")
   end
 
-  xit 'can create a random key' do
-    expect(@encrypt.random_key.length).to eq(5)
+  it "can get todays date" do
+    expect(@encrypt.date_to_number).to eq("040895")
   end
 
-  xit "can create the A, B, C, D keys" do
+  it "can generate random key" do
+    expect(@encrypt.key_generator.length).to eq(5)
+  end
+
+  it "can create the A, B, C, D keys" do
     expect(@encrypt.alphabet_keys).to be_a Integer
 
   end
 
-  xit "can create the date offset" do
+  it "can create the date offset" do
     expect(@encrypt.date_offset).to be_a Integer
 
   end
 
-  xit "has the final shifts" do
+  it "has the final shifts" do
     expect(@encrypt.shift_key[:A]).to be_a Integer
 
   end

@@ -6,7 +6,6 @@ class Encrypt
     @key = key
     @date = date
     @alphabet = ("a".."z").to_a << " "
-    # @random_key = '%05d' % rand(10 ** 4)
     @shift = Hash.new(0)
   end
 
