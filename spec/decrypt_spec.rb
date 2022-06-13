@@ -35,7 +35,7 @@ RSpec.describe Decrypt do
   end
 
   it "can decrypt a message" do
-    expect(@decrypt.new_message).to eq({:decrypted => "hello world" , :key => "02715" , :date => "040895"})
+    expect(@decrypt.new_message).to eq({:decryption => "hello world" , :key => "02715" , :date => "040895"})
 
   end
 

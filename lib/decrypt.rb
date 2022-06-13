@@ -78,7 +78,7 @@ class Decrypt
          char = reverse_d[char]
        end
      end
-     {:decrypted => decrypted.join, :key => @key, :date => @date}
+     {:decryption => decrypted.join, :key => @key, :date => @date}
    end
 
 
