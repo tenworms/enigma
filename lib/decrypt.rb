@@ -22,4 +22,15 @@ class Decrypt
     @d_offset = last_4[3].to_i
   end
 
+  def shift_key
+    alphabet_keys
+    date_offset
+    @shift = {
+              :A => ((@a_key + @a_offset)%27),
+              :B => ((@b_key + @b_offset)%27),
+              :C => ((@c_key + @c_offset)%27),
+              :D => ((@d_key + @d_offset)%27)
+              }
+  end
+
 end

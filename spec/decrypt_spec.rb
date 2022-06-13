@@ -28,7 +28,12 @@ RSpec.describe Decrypt do
 
   it "can create the date offset" do
     expect(@decrypt.date_offset).to be_a Integer
-
   end
+
+  it "has the final shifts" do
+    expect(@decrypt.shift_key[:A]).to be_a Integer
+  end
+
+
 
 end
