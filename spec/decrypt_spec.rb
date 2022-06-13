@@ -12,6 +12,10 @@ RSpec.describe Decrypt do
 
   it "has a coded message" do
     expect(@decrypt.message).to eq("keder ohulw")
+  end
+
+  it "has a key" do
+    expect(@decrypt.key).to eq("02715")
 
   end
 
