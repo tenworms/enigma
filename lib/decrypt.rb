@@ -5,6 +5,8 @@ class Decrypt
     @message = message
     @key = key
     @date = date
+    @alphabet = ("a".."z").to_a << " "
+
   end
 
   def alphabet_keys
@@ -32,5 +34,52 @@ class Decrypt
               :D => ((@d_key + @d_offset)%27)
               }
   end
+
+  def a_final
+    shift_key
+     Hash[@alphabet.zip(@alphabet.rotate(@shift[:A]))]
+  end
+  def b_final
+    shift_key
+      Hash[@alphabet.zip(@alphabet.rotate(@shift[:B]))]
+   end
+   def c_final
+     shift_key
+     Hash[@alphabet.zip(@alphabet.rotate(@shift[:C]))]
+   end
+   def d_final
+     shift_key
+      Hash[@alphabet.zip(@alphabet.rotate(@shift[:D]))]
+   end
+
+   def reverse_a
+     a_final.invert
+     end
+  def reverse_b
+    b_final.invert
+  end
+  def reverse_c
+    c_final.invert
+  end
+ def reverse_d
+   d_final.invert
+  end
+
+   def new_message
+     message = @message.downcase.chars
+     decrypted = message.each_with_index.map do |char, i|
+       if i % 4 == 0
+         char = reverse_a[char]
+       elsif i % 4 == 1
+         char = reverse_b[char]
+       elsif i % 4 == 2
+         char = reverse_c[char]
+       elsif i % 4 == 3
+         char = reverse_d[char]
+       end
+     end
+     {:decrypted => decrypted.join, :key => @key, :date => @date}
+   end
+
 
 end
