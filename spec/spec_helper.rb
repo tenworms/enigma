@@ -1,2 +1,3 @@
 require 'simplecov'
-Simplecov.start
+SimpleCov.start
+require_relative 'encrypt_spec'
