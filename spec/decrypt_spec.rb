@@ -22,4 +22,9 @@ RSpec.describe Decrypt do
     expect(@decrypt.date).to eq("040895")
   end
 
+  it "can create the A, B, C, D key" do
+    expect(@decrypt.alphabet_keys).to be_a Integer
+
+  end
+
 end
