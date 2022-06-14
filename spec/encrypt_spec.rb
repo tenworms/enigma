@@ -25,10 +25,6 @@ RSpec.describe Encrypt do
     expect(@encrypt.date).to eq("040895")
   end
 
-  xit "can get todays date" do
-    expect(@encrypt.date_to_number).to eq("040895")
-  end
-
   it "can generate random key" do
     expect(@encrypt.key_generator.length).to eq(5)
   end

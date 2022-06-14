@@ -1,6 +1,7 @@
 require_relative 'encrypt'
 require_relative 'decrypt'
 class Enigma
+
   attr_reader
 
 
@@ -8,13 +9,9 @@ class Enigma
 
   end
 
-  def encrypt(message, key, date)
-    encrypt = Encrypt.new(message, key, date).new_message
-  #   encrypted_hash = {
-  #                     encryption: @encrypt.new_message,
-  #                     key: key
-  #                     date: date
-  #                     }
+  def encrypt(message)
+    encrypt = Encrypt.new(message).new_message
+
   end
 
   def decrypt(message, key, date)

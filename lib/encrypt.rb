@@ -1,4 +1,6 @@
+require './lib/alphabetable'
 class Encrypt
+  include Alphabetable
   attr_reader :encryption, :key, :date, :random_key, :keys
 
   def initialize(message, key = key_generator, date = date_to_number)
@@ -44,22 +46,6 @@ class Encrypt
   end
 
 
-   def a_final
-     shift_key
-     Hash[@alphabet.zip(@alphabet.rotate(@shift[:A]))]
-   end
-   def b_final
-     shift_key
-      Hash[@alphabet.zip(@alphabet.rotate(@shift[:B]))]
-    end
-    def c_final
-      shift_key
-      Hash[@alphabet.zip(@alphabet.rotate(@shift[:C]))]
-    end
-    def d_final
-      shift_key
-      Hash[@alphabet.zip(@alphabet.rotate(@shift[:D]))]
-    end
 
 
    def new_message
