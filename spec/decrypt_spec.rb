@@ -35,9 +35,18 @@ RSpec.describe Decrypt do
   end
 
   it "can decrypt a message" do
-    expect(@decrypt.new_message).to eq({:decryption => "hello world" , :key => "02715" , :date => "040895"})
+    expect(@decrypt.decrypt).to eq({:decryption => "hello world" , :key => "02715" , :date => "040895"})
 
   end
+
+  it "can decrypt a message without being given a date(today's date)" do
+   decryption = Decrypt.new("hello world", "12345")
+   expect(decryption.decrypt).to be_a Hash
+   expect(decryption.decrypt[:key].length).to eq(5)
+   expect(decryption.decrypt[:decryption] == "hello world").to eq(false)
+   expect(decryption.decrypt[:decryption]).to be_a(String)
+ end
+
 
 
 end

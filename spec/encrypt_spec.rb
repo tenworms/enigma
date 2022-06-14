@@ -45,8 +45,15 @@ RSpec.describe Encrypt do
   end
 
   it "works" do
-    expect(@encrypt.new_message).to eq({:encryption => "keder ohulw" , :key => "02715" , :date => "040895"})
+    expect(@encrypt.encrypt).to eq({:encryption => "keder ohulw" , :key => "02715" , :date => "040895"})
+  end
 
+  it "can encrypt a message without being given a key or date" do
+    encryption = Encrypt.new("hello world")
+    expect(encryption.encrypt).to be_a Hash
+    expect(encryption.encrypt[:key].length).to eq(5)
+    expect(encryption.encrypt[:encryption]).to be_a(String)
+    expect(encryption.encrypt[:encryption] == "hello world").to eq(false)
   end
 
 

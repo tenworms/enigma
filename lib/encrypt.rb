@@ -16,7 +16,7 @@ class Encrypt
     @date = Time.now.strftime("%m%d%y")
   end
 
-   def new_message
+   def encrypt
      message = @encryption.downcase.chars
      encrypted = message.each_with_index.map do |char, i|
        if i % 4 == 0 then char = a_final[char]

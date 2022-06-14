@@ -5,14 +5,14 @@ class Decrypt
   include Alphabetable, Calculations
   attr_reader :message, :key, :date
 
-  def initialize(message, key, date)
+  def initialize(message, key, date = date_to_number)
     @message = message
     @key = key
     @date = date
     @alphabet = ("a".."z").to_a << " "
   end
 
-   def new_message
+   def decrypt
      message = @message.downcase.chars
      decrypted = message.each_with_index.map do |char, i|
        if i % 4 == 0 then char = reverse_a[char]
