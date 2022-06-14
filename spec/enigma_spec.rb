@@ -5,7 +5,7 @@ require './lib/encrypt'
 RSpec.describe Enigma do
 
   before :each do
-    @enigma = Enigma.new #"hello world", "02715", "040895"
+    @enigma = Enigma.new
   end
 
   it "exists" do
@@ -13,7 +13,7 @@ RSpec.describe Enigma do
   end
 
 
-  
+
 
   it "can encrypt a message" do
     expect(@enigma.encrypt("hello world", "02715", "040895")).to eq({

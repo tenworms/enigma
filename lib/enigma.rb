@@ -2,23 +2,15 @@ require_relative 'encrypt'
 require_relative 'decrypt'
 class Enigma
 
-  attr_reader
-
-
   def initialize
-
   end
 
-  def encrypt(message)
-    encrypt = Encrypt.new(message).new_message
-
+  def encrypt(message, key = key_generator, date = date_to_number )
+    encrypt = Encrypt.new(message, key, date).new_message
   end
 
   def decrypt(message, key, date)
     decrypt = Decrypt.new(message, key, date).new_message
   end
-
-
-
 
 end
