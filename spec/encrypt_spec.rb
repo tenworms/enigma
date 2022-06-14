@@ -48,6 +48,29 @@ RSpec.describe Encrypt do
     expect(@encrypt.encrypt).to eq({:encryption => "keder ohulw" , :key => "02715" , :date => "040895"})
   end
 
+  it "has rotated alphabets for the A key" do
+    expect(@encrypt.a_final).to be_a Hash
+    expect(@encrypt.a_final.first).to eq(["a", "d"])
+    expect(@encrypt.a_final.count).to eq(27)
+  end
+
+  it "has rotated alphabets for the B key" do
+    expect(@encrypt.b_final).to be_a Hash
+    expect(@encrypt.b_final.first).to eq(["a", "a"])
+    expect(@encrypt.b_final.count).to eq(27)
+  end
+  it "has rotated alphabets for the C key" do
+    expect(@encrypt.c_final).to be_a Hash
+    expect(@encrypt.c_final.first).to eq(["a", "t"])
+    expect(@encrypt.c_final.count).to eq(27)
+  end 
+
+  it "has rotated alphabets for the D key" do
+    expect(@encrypt.d_final).to be_a Hash
+    expect(@encrypt.d_final.first).to eq(["a", "u"])
+    expect(@encrypt.d_final.count).to eq(27)
+  end
+
   it "can encrypt a message without being given a key or date" do
     encryption = Encrypt.new("hello world")
     expect(encryption.encrypt).to be_a Hash
