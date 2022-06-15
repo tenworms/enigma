@@ -1,18 +1,19 @@
+require_relative 'encrypt'
+require_relative 'decrypt'
+require './lib/alphabetable'
+require './lib/calculations'
 class Enigma
-  attr_reader
-
+  include Calculations, Alphabetable
 
   def initialize
   end
 
-  def encrypt(message, key, date)
-   task = Encrypt.new({
-                      encryption: message,
-                      key: key,
-                      date: date
-                      })
-              end
+  def encrypt(message, key = key_generator, date = date_to_number )
+    encrypt = Encrypt.new(message, key , date).encrypt
+  end
 
-
+  def decrypt(message, key, date)
+    decrypt = Decrypt.new(message, key, date).decrypt
+  end
 
 end
