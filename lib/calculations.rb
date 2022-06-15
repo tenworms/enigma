@@ -6,6 +6,7 @@ end
 def key_generator
   '%05d' % rand(10 ** 4)
 end
+
 def alphabet_keys
   @a_key = @key[0..1].to_i
   @b_key = @key[1..2].to_i
